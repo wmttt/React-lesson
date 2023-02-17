@@ -17,7 +17,7 @@ class Box extends Component {
     //     window.onresize = null;
     // }
 
-    //减少性能损耗，提升性能优化，面试中最会问的。return TRUE 组件才更新。
+    //减少性能损耗，提升性能优化，面试中最会问的。return TRUE 组件才更新。性能优化之一，之二是PureComponent
     shouldComponentUpdate = (nextProps) => {
         if (this.props.current === this.props.index || nextProps.current === nextProps.index) {
             return true

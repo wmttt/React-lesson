@@ -5,16 +5,30 @@ export default class App extends Component {
         myname:"wmt",
         myage:'20'
     }
-    static getDerivedStateFromProps(){  //覆盖掉 state 的内容
-        console.log("getDerivedStateFromProps")
+    static getDerivedStateFromProps(nextProps,nextState){  //覆盖掉 state 的内容
+        console.log(nextProps)
+        console.log(nextState)
         return {
-            myname:"wumengting"
+            myname:nextState.myname.substring(0,1).toUpperCase()
+            +nextState.myname.substring(1)
         }
     }
+
+ getSnapshotBeforeUpdate(){  //执行在componentDidUpdate之前
+    console.log("getSnapshotBeforeUpdate")
+    return 100;
+}
+
+    
   render() {
     return (
       <div>
-        app-{this.state.myname+this.state.myage}
+        <button onClick={()=>{
+            this.setState({
+                myname:'xiaoming'
+            })
+        }}> 点击按钮</button>
+        app-{this.state.myname}-{this.state.myage}
       </div>
     )
   }
