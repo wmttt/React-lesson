@@ -10,7 +10,7 @@ import ReactDOM from 'react-dom/client';
 // import App from './01-base/01-class组件'  
 // import App3 from './01-base/03-组件的嵌套'
 // import App3 from './01-base/12-卖座选项卡'
-import App3 from './02-advanced/06-新生命周期'
+import App3 from './03-Hooks/04-useEffect2案例'
 
 // ReactDOM.render(<App3/>,document.getElementById('root'))
 
